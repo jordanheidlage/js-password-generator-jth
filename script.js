@@ -1,10 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var generateBtn = document.querySelector("#generate");
-var lowercase="abcdefghijklmnopqrstuvxyz"
-var uppercase= lowercase.toUpperCase()
-var number="0123456789"
-var special="!@#$%^"
+var passwordLength;
+var confirmNumber
+var confirmLowercase
+var confirmUppercase
+var confirmSpecialchar
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -13,41 +18,30 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-function generatePassword() {
-  var finalpwd=""
-
-  var size = prompt("Please enter 8 to 128 characters")
-  console.log(size)
-  // then do validations, if I am doing checking.
-
-  if (size >= 8 && size <= 128) {
-     var isLowercase= confirm("include lowercase?")
-     console.log(isLowercase)
-
-     var isUppercase= confirm("include uppercase?")
-     console.log( isUppercase)
-     var isNumber= confirm("include number?")
-     console.log(isNumber)
-     var isSpecial= confirm("include  special?")
-     console.log(isSpecial)
-      
-     if(isLowercase===true){
-          var positionString=Math.floor(Math.random() *26)  
-          console.log(positionString) 
-          finalpwd=finalpwd + lowercase[positionString]
-     }
-    //  else{
-    // //do nothing 
-    //  }
-
-  }
-  else {
-     alert("invalid entry")
-  }
-
-   return finalpwd
-
-}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function generatePassword(){
+  passwordLength = prompt("Please choose between 8-128 characters")
+  console.log("Password Length"+passwordLength);
+
+  if(!passwordLength){
+    alert("Please input a value");
+
+  }else if (passwordLength >= 8 && =passwordLength=<128) {
+    passwordLength =prompt("Choose between 8 and 128");
+    console.log("Password length"+passwordLength);
+
+  } else {
+    confirmLowercase = confirm("Is this going to contain any lowercase letters?");
+    console.log("Lower case"+lowercase)
+  }
+}
+
+
+
+for (var i = 0; i < passwordLength; i++) {
+  var allChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
+  passwordBlank.push(allChoices);
+  console.log(allChoices);
+}
