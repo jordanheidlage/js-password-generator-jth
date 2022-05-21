@@ -34,9 +34,18 @@ function generatePassword(){
 
   } else {
     confirmLowercase = confirm("Is this going to contain any lowercase letters?");
-    console.log("Lower case"+lowercase)
-  }
-}
+    console.log("Lower case"+confirmLowercase)
+    confirmUppercase = confirm("Is this going to contain any uppercase letters?");
+    console.log("Upper case"+confirmUppercase)
+    confirmNumber = confirm("Is this going to contain any numbers?");
+    console.log("Numbers"+ confirmNumber);
+    confirmSpecialchar = confirm("Is this going to contain any special characters?");
+    console.log("Special characters"+confirmSpecialchar);
+
+};
+
+if (!confirmLowercase && !confirmUppercase && confirmNumber && confirmSpecialchar && ){
+  userChoices = alert("Pick something dude");
 
 
 
