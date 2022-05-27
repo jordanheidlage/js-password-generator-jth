@@ -37,6 +37,11 @@ function generatePassword() {
           console.log(positionString) 
           finalpwd=finalpwd + lowercase[positionString]
      }
+    //  else{
+    // //do nothing 
+    //  }
+
+  }
   else {
      alert("invalid entry")
   }
